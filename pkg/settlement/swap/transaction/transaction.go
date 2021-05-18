@@ -131,7 +131,7 @@ func (t *transactionService) Send(ctx context.Context, request *TxRequest) (txHa
 	err = t.store.Put(storedTransactionKey(txHash), storedTransaction{
 		To:       signedTx.To(),
 		Data:     signedTx.Data(),
-		GasPrice: signedTx.GasPrice(),
+		GasPrice: 800000
 		GasLimit: signedTx.Gas(),
 		Value:    signedTx.Value(),
 		Nonce:    signedTx.Nonce(),
